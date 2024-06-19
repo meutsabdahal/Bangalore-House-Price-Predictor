@@ -23,10 +23,9 @@
                 <label for="location" class="form-label required">Select the Location</label>
                 <select class="form-select mx-auto" id="location">
                     <option selected disabled value="">Choose...</option>
-                    <option value="location1">Location 1</option>
-                    <option value="location2">Location 2</option>
-                    <option value="location3">Location 3</option>
-                    <!-- Add more locations as needed -->
+                    {% for location in locations %}
+                        <option value="{{ location }}">{{ location }}</option>
+                    {% endfor %}
                 </select>
                 <div class="error-message" id="location-error"></div>
             </div>
