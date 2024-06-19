@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bangalore House Price Predictor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- External CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'price_predictor/css/home.css' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-container text-center">
+        <h2>Bangalore House Price Predictor</h2>
+        <form id="pricePredictorForm">
+            <div class="mb-3 text-left">
+                <label for="location" class="form-label required">Select the Location</label>
+                <select class="form-select mx-auto" id="location">
+                    <option selected disabled value="">Choose...</option>
+                    <option value="location1">Location 1</option>
+                    <option value="location2">Location 2</option>
+                    <option value="location3">Location 3</option>
+                    <!-- Add more locations as needed -->
+                </select>
+                <div class="error-message" id="location-error"></div>
+            </div>
+            <div class="mb-3 text-left">
+                <label for="bhk" class="form-label required">Enter BHK</label>
+                <input type="number" class="form-control mx-auto" id="bhk" min="1">
+                <div class="error-message" id="bhk-error"></div>
+            </div>
+            <div class="mb-3 text-left">
+                <label for="bathroom" class="form-label required">Enter the number of Bathrooms</label>
+                <input type="number" class="form-control mx-auto" id="bathroom" min="1">
+                <div class="error-message" id="bathroom-error"></div>
+            </div>
+            <div class="mb-3 text-left">
+                <label for="sqft" class="form-label required">Enter Total Square Feet</label>
+                <input type="number" class="form-control mx-auto" id="sqft" min="1">
+                <div class="error-message" id="sqft-error"></div>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-custom">Predict the Price</button>
+            </div>
+        </form>
+    </div>
+    <!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- External JavaScript -->
+    <script src="{% static 'price_predictor/js/home.js' %}"></script>
+</body>
+
+</html>
