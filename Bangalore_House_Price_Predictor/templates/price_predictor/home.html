@@ -18,8 +18,14 @@
 <body>
     <div class="form-container text-center">
         <h2>Bangalore House Price Predictor</h2>
+
+        <div class="info-text">
+            <p>Want to predict the price of a new house in Bangalore? Try filling the details below:</p>
+        </div>
+
         <form id="pricePredictorForm" method="POST">
             {% csrf_token %}
+            <!-- location field -->
             <div class="mb-3 text-left">
                 <label for="location" class="form-label required">Select the Location</label>
                 <select class="form-select mx-auto" id="location" name="location">
@@ -30,29 +36,33 @@
                 </select>
                 <div class="error-message" id="location-error"></div>
             </div>
+            <!-- bhk field -->
             <div class="mb-3 text-left">
                 <label for="bhk" class="form-label required">Enter BHK</label>
                 <input type="number" class="form-control mx-auto" id="bhk" name="bhk" min="1">
                 <div class="error-message" id="bhk-error"></div>
             </div>
+            <!-- bathroom field -->
             <div class="mb-3 text-left">
                 <label for="bathroom" class="form-label required">Enter the number of Bathrooms</label>
                 <input type="number" class="form-control mx-auto" id="bathroom" name="bathroom" min="1">
                 <div class="error-message" id="bathroom-error"></div>
             </div>
+            <!-- square feet field -->
             <div class="mb-3 text-left">
                 <label for="sqft" class="form-label required">Enter Total Square Feet</label>
                 <input type="number" class="form-control mx-auto" id="sqft" name="sqft" min="1">
                 <div class="error-message" id="sqft-error"></div>
             </div>
+            <!-- submit button -->
             <div class="d-grid">
                 <button type="submit" class="btn btn-custom">Predict the Price</button>
             </div>
         </form>
-
+        <!-- predicted price display -->
         <div class="result-container" id="result-container">
             <h3>Predicted Price:</h3>
-            <p id="predicted-price">INR {{prediction}}</p>
+            <p id="predicted-price"></p>
         </div>
     </div>
     <!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->

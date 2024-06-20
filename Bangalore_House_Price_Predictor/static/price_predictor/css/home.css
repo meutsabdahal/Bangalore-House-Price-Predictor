@@ -8,6 +8,13 @@ body {
     margin: 0;
 }
 
+.info-text {
+    margin-bottom: 20px;
+    font-weight: 5500;
+    color: #ffffff;
+    font-size: 0.8rem;
+}
+
 .form-container {
     background-color: #333333;
     padding: 40px;
@@ -39,12 +46,10 @@ body {
 .form-select,
 .form-control {
     background-color: white;
-    /* Changed background color to white */
     color: #444444;
     border: none;
     border-radius: 20px;
     margin-bottom: 10px;
-    /* Decreased margin */
     padding: 10px 20px;
     font-family: 'Poppins', sans-serif;
 }
@@ -68,10 +73,10 @@ body {
     color: red;
     font-size: 0.8em;
     margin-top: 3px;
-    /* Decreased margin */
 }
 
 .result-container {
+    display: none;
     background-color: #444444;
     color: white;
     padding: 20px;
