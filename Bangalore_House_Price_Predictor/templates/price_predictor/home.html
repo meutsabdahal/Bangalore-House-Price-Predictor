@@ -18,10 +18,11 @@
 <body>
     <div class="form-container text-center">
         <h2>Bangalore House Price Predictor</h2>
-        <form id="pricePredictorForm">
+        <form id="pricePredictorForm" method="POST">
+            {% csrf_token %}
             <div class="mb-3 text-left">
                 <label for="location" class="form-label required">Select the Location</label>
-                <select class="form-select mx-auto" id="location">
+                <select class="form-select mx-auto" id="location" name="location">
                     <option selected disabled value="">Choose...</option>
                     {% for location in locations %}
                         <option value="{{ location }}">{{ location }}</option>
@@ -31,17 +32,17 @@
             </div>
             <div class="mb-3 text-left">
                 <label for="bhk" class="form-label required">Enter BHK</label>
-                <input type="number" class="form-control mx-auto" id="bhk" min="1">
+                <input type="number" class="form-control mx-auto" id="bhk" name="bhk" min="1">
                 <div class="error-message" id="bhk-error"></div>
             </div>
             <div class="mb-3 text-left">
                 <label for="bathroom" class="form-label required">Enter the number of Bathrooms</label>
-                <input type="number" class="form-control mx-auto" id="bathroom" min="1">
+                <input type="number" class="form-control mx-auto" id="bathroom" name="bathroom" min="1">
                 <div class="error-message" id="bathroom-error"></div>
             </div>
             <div class="mb-3 text-left">
                 <label for="sqft" class="form-label required">Enter Total Square Feet</label>
-                <input type="number" class="form-control mx-auto" id="sqft" min="1">
+                <input type="number" class="form-control mx-auto" id="sqft" name="sqft" min="1">
                 <div class="error-message" id="sqft-error"></div>
             </div>
             <div class="d-grid">
@@ -51,7 +52,7 @@
 
         <div class="result-container" id="result-container">
             <h3>Predicted Price:</h3>
-            <p id="predicted-price"></p>
+            <p id="predicted-price">INR {{prediction}}</p>
         </div>
     </div>
     <!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->
