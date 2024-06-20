@@ -40,5 +40,11 @@ document.getElementById('pricePredictorForm').addEventListener('submit', functio
 
     if (!isValid) {
         event.preventDefault(); // Prevent form submission if validation fails
+    } else {
+        event.preventDefault(); // Prevent form submission to handle prediction logic
+        // Simulate a price prediction result
+        var predictedPrice = "$" + (Math.random() * 100000).toFixed(2); // Example prediction logic
+        document.getElementById('predicted-price').innerText = predictedPrice;
+        document.getElementById('result-container').style.display = 'block';
     }
 });

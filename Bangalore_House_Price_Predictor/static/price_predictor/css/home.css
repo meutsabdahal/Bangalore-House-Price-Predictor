@@ -70,3 +70,13 @@ body {
     margin-top: 3px;
     /* Decreased margin */
 }
+
+.result-container {
+    display: none;
+    background-color: #444444;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+}
